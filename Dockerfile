@@ -29,6 +29,7 @@ RUN R -e "install.packages(c('shiny', 'rmarkdown', 'shinythemes', 'shinyjs', 'le
 RUN R -e "install.packages(c('ggplot2','dplyr','data.table','raster','sp','devtools','tidyr','readr','tibble','reshape2','doBy','ggvis','gstat','rgdal','Cairo','ggmap'), repos='https://cloud.r-project.org/')"
 RUN R -e "devtools::install_github('hadley/tidyverse')"
 RUN R -e "devtools::install_github('tidyverse/ggplot2')"
+RUN R -e "devtools::install_github('tidyverse/dplyr')"
 RUN R -e "devtools::install_github('r-spatial/sf')"
 
 CMD ["R"]
