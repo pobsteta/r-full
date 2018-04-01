@@ -26,10 +26,11 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated \
 RUN R -e "install.packages(c('shiny', 'rmarkdown', 'shinythemes', 'shinyjs', 'leaflet', 'leaflet.extras', 'DT'), repos='https://cloud.r-project.org/')"
 
 # library for gftools
-RUN R -e "install.packages(c('ggplot2','dplyr','data.table','raster','sp','devtools','tidyr','readr','tibble','reshape2','doBy','ggvis','gstat','rgdal','Cairo','ggmap','ggrepel','rhandsontable','RPostgreSQL'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('ggplot2','dplyr','data.table','raster','sp','devtools','tidyr','readr','tibble','reshape2','doBy','ggvis','gstat','rgdal','Cairo','ggmap','ggrepel','pool','RPostgreSQL'), repos='https://cloud.r-project.org/')"
 RUN R -e "devtools::install_github('hadley/tidyverse')"
 RUN R -e "devtools::install_github('tidyverse/ggplot2')"
 RUN R -e "devtools::install_github('tidyverse/dplyr')"
 RUN R -e "devtools::install_github('r-spatial/sf')"
+RUN R -e "devtools::install_github('jrowen/rhandsontable')"
 
 CMD ["R"]
